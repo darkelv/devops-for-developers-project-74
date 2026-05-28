@@ -1,0 +1,10 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    working_dir: /app
+    user: node
+    volumes:
+      - ./app:/app
+    command: sh -c "npm install && npm run build && npm run dev"
